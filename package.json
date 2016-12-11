@@ -1,0 +1,25 @@
+{
+  "devDependencies": {
+    "jest": "^17.0.3"
+  },
+  "name": "kontur",
+  "description": "json-schema made simple",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "json-schema"
+  ],
+  "author": "zf",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zweifisch/kontur.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zweifisch/kontur/issues"
+  },
+  "homepage": "https://github.com/zweifisch/kontur#readme"
+}
