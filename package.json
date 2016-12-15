@@ -4,7 +4,7 @@
   },
   "name": "kontur",
   "description": "json-schema made simple",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -20,6 +20,9 @@
   },
   "bugs": {
     "url": "https://github.com/zweifisch/kontur/issues"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   },
   "homepage": "https://github.com/zweifisch/kontur#readme"
 }

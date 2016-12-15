@@ -6,17 +6,8 @@ const array = require('./lib/array')
 const nil = require('./lib/null')
 const bool = require('./lib/bool')
 const not = require('./lib/not')
+const compile = require('./lib/compile')
 const { any, all, one } = require('./lib/misc')
-
-const compile = (schema) => {
-    if ('function' === typeof schema.schema) {
-        return schema.schema().schema
-    } else if (Array.isArray(schema)) {
-        return array.items(schema).schema().schema
-    } else {
-        return object.properties(schema).schema().schema
-    }
-}
 
 module.exports = {
     nil,
