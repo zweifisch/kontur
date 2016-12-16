@@ -6,6 +6,8 @@
 
 a little DSL that outputs JSON schema
 
+[instruction](koa.md) on validating request body in koa using ajv and kontur
+
 ## overview
 
 ```js
@@ -19,6 +21,21 @@ compile({
 })
 ```
 
+will generate
+
+```js
+{
+  type: 'object',
+  properties: {
+     gender: { type: 'string' },
+     age: { type: 'integer' },
+     nickname: { type: 'string' },
+     verified: { type: 'boolean' }
+  },
+  required: [ 'gender', 'age', 'nickname', 'verified' ]
+}
+```
+
 ```js
 compile({
   gender: str.in('male', 'female').optional,
@@ -26,6 +43,35 @@ compile({
   nickname: str.minlen(3).match(/^[a-zA-Z]/),
   verified: bool.optional.default(false)
 })
+```
+
+will generate
+
+```js
+{
+  type: 'object',
+  properties: {
+    gender: {
+      enum: ['male', 'female'],
+      type: 'string'
+    },
+    age: {
+      minimum: 0,
+      maximum: 200,
+      type: 'integer'
+    },
+    nickname: {
+      minLength: 3,
+      pattern: '^[a-zA-Z]',
+      type: 'string'
+    },
+    verified: {
+      default: false,
+      type: 'boolean'
+    }
+  },
+  required: [ 'age', 'nickname' ]
+}
 ```
 
 nested schema
@@ -42,7 +88,7 @@ compile({
 })
 ```
 
-[instruction](koa.md) on validating request body in koa using ajv and kontur
+the output can be found [here](lib/compile.test.js)
 
 ## types
 
