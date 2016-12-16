@@ -3,7 +3,7 @@
     "jest": "^17.0.3"
   },
   "name": "kontur",
-  "description": "json-schema made simple",
+  "description": "a little DSL that outputs JSON schema",
   "version": "0.2.0",
   "main": "index.js",
   "scripts": {

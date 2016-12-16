@@ -4,7 +4,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Node.js Version][node-version-image]][node-version-url]
 
-json-schema made simple
+a little DSL that outputs JSON schema
 
 ## overview
 
@@ -19,7 +19,7 @@ compile({
 })
 ```
 
-```
+```js
 compile({
   gender: str.in('male', 'female').optional,
   age: int.between(0, 200),
@@ -30,7 +30,7 @@ compile({
 
 nested schema
 
-```
+```js
 compile({
   assignment: {
     assignees: array.len(3).uniq.items(str.len(16)),
@@ -41,6 +41,8 @@ compile({
   }
 })
 ```
+
+[instruction](koa.md) on validating request body in koa using ajv and kontur
 
 ## types
 
